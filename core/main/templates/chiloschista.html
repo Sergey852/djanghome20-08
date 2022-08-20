@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="{% url 'home'%}"><button>Home</button></a>
+<a href="{% url 'cattleya'%}"><button>Cattleya</button></a>
+<a href="{% url 'dendrobium'%}"><button>Dendrobium</button></a>
+
+<hr>
+<br>
+
+    {% for k in chil %}
+        <img src="{{ k.img.url }}" width="700px"alt="">
+        <h2>{{ k.name }}</h2>
+        <p>{{ k.about }}</p>
+    {% endfor %}
+
+{% endblock %}
